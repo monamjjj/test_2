@@ -1,4 +1,5 @@
 name: master.yml
+
 on:
   push:
     branches: [master]
@@ -15,10 +16,12 @@ jobs:
         os: [ubuntu-18.04, ubuntu-latest, macos-latest]
         version_node: [15, 16, 20]
     steps:
-      runs: echo test for Linux
+      - name: Run test for Linux
+        run: echo "test for Linux"
 
   test_app_for_windows:
     needs: test_app
     runs-on: windows-2019
     steps:
-      runs: echo test for Windows
+      - name: Run test for Windows
+        run: echo "test for Windows"
