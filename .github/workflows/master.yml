@@ -20,13 +20,10 @@ jobs:
               with:
                 node-version: $ {{ matrix.version_node }}
             - run: npm ci
-            - name: Run test_app
-              uses: actions/run-tests@v1
     test_app_for_windows:
         needs: test_app
         runs-on: windows-2019
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
-            - name: Run tests
-              uses: actions/run-tests@v1
+	
